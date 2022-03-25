@@ -11,13 +11,14 @@ import Convert from "./components/convert";
 import Header from "./components/header";
 import Profile from "./components/profile";
 import { ProtectedRoute } from "./components/ProtectedRoute";
+import auth from "./services/authService";
 
 function App() {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
     const getData = async () => {
-      const currentUser = null;
+      const currentUser = await auth.getCurrentUser();
       setUser(currentUser);
     };
 

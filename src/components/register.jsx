@@ -62,7 +62,7 @@ const Register = () => {
     }
 
     try {
-      const { data } = await register({
+      await register({
         firstName: user.firstName,
         lastName: user.lastName,
         email: user.email,

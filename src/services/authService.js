@@ -1,6 +1,7 @@
 import http from "./httpService";
+import jwtDecode from "jwt-decode";
 
-const apiEndpoint = "/auth/jwt/create/";
+const apiEndpoint = "/auth/token/";
 const tokenKey = "greencloud_token";
 
 async function login(email, password) {
@@ -20,9 +21,19 @@ function loginWithJwt(jwt) {
   localStorage.setItem(tokenKey, jwt);
 }
 
+function getCurrentUser() {
+  try {
+    const jwt = localStorage.getItem(tokenKey);
+    return jwtDecode(jwt);
+  } catch (ex) {
+    return null;
+  }
+}
+
 export default {
   login,
   logout,
   loginWithJwt,
   getJwt,
+  getCurrentUser,
 };
