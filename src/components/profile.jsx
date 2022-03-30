@@ -1,6 +1,18 @@
+import React from "react";
+import Modal from "./modal";
+import ProfileUpdate from "./profileUpdate";
+
 const Profile = ({ user }) => {
   return (
     <div className="profile">
+      <Modal id="modalUpdate">
+        <ProfileUpdate user={user} />
+      </Modal>
+      <div
+        className="ri-pencil-fill ri-2x"
+        data-bs-toggle="modal"
+        data-bs-target="#modalUpdate"
+      ></div>
       <div className="row mt-5">
         <div className="col-0 col-md-1"></div>
         <div className="col-12 col-md-5">

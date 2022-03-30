@@ -84,6 +84,12 @@ code {
   padding: 40px;
 }
 
+.ri-pencil-fill {
+  color: #2b7ad7;
+  cursor: pointer;
+  float: right;
+}
+
 @media only screen and (max-width: 768px) {
   .card {
     width: 100%;
