@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { toast } from "react-toastify";
+import { convert } from "../services/convertService";
 import ListError from "./listError";
 import Joi from "joi";
 
@@ -35,8 +36,7 @@ const Convert = () => {
     }
 
     try {
-      console.log(text);
-      console.log(language);
+      await convert(text, language);
     } catch (ex) {
       if (
         ex.response &&
