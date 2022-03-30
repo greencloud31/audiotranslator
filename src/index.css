@@ -75,4 +75,21 @@ code {
 .label {
   color: #2b7ad7;
   font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.card {
+  width: 60%;
+  margin: auto;
+  padding: 40px;
+}
+
+@media only screen and (max-width: 768px) {
+  .card {
+    width: 100%;
+  }
+
+  .profile {
+    width: 100%;
+  }
 }
