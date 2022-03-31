@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Input from "./input";
 import { updateUser } from "../services/userService";
+import auth from "../services/authService";
 import Joi from "joi";
 import { toast } from "react-toastify";
 
@@ -58,6 +59,8 @@ const ProfileUpdate = (props) => {
         user.lastName,
         user.password
       );
+      auth.logout();
+      await auth.login(props.user.email, user.password);
       window.location = "/";
     } catch (ex) {
       toast.error("Something went wrong.");
