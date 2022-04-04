@@ -81,7 +81,7 @@ const Login = () => {
 
       <button className="btn btn-primary">Sign In</button>
       <div className="text-center">
-        <span>New User? </span>
+        <span className="value">New User? </span>
         <Link to="/register" className="auth-link">
           Register
         </Link>

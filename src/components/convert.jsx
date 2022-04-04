@@ -88,8 +88,13 @@ const Convert = () => {
         <button className="btn btn-primary">Convert</button>
       </form>
       {isAvailable && (
-        <a href={url} target="_blank" className="auth-link">
-          Play audio
+        <a
+          href={url}
+          target="_blank"
+          className="auth-link"
+          style={{ fontSize: "25px", textAlign: "center" }}
+        >
+          Play Audio <i className="ri-external-link-line"></i>
         </a>
       )}
     </div>
