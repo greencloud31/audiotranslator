@@ -37,7 +37,8 @@ const Convert = () => {
     }
 
     try {
-      await convert(text, language);
+      const { data } = await convert(text, language);
+      setUrl(data.audio_file);
     } catch (ex) {
       if (
         ex.response &&
