@@ -7,6 +7,7 @@ import Joi from "joi";
 const Convert = () => {
   const [text, setText] = useState("");
   const [language, setLanguage] = useState("Select Language");
+  const [url, setUrl] = useState(null);
 
   const schema = Joi.object({
     text: Joi.string().required().label("Text"),
@@ -63,9 +64,9 @@ const Convert = () => {
           >
             <option value="hi">Hindi</option>
             <option value="fr-CA">French (Canada) </option>
-            <option value="te">Telugu</option>
-            <option value="mr">Marathi</option>
-            <option value="kn">Kannada</option>
+            <option value="ar">Arabic</option>
+            <option value="de">German</option>
+            <option value="it">Italian</option>
           </select>
         </div>
         <div className="form-group">
