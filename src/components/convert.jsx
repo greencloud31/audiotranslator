@@ -3,11 +3,13 @@ import { toast } from "react-toastify";
 import { convert } from "../services/convertService";
 import ListError from "./listError";
 import Joi from "joi";
+import Player from "./Player";
 
 const Convert = () => {
   const [text, setText] = useState("");
   const [language, setLanguage] = useState("Select Language");
-  const [url, setUrl] = useState(null);
+  const [url, setUrl] = useState("");
+  const [isAvailable, setAvailable] = useState(false);
 
   const schema = Joi.object({
     text: Joi.string().required().label("Text"),
@@ -39,6 +41,7 @@ const Convert = () => {
     try {
       const { data } = await convert(text, language);
       setUrl(data.audio_file);
+      setAvailable(true);
     } catch (ex) {
       if (
         ex.response &&
@@ -85,7 +88,7 @@ const Convert = () => {
         </div>
         <button className="btn btn-primary">Convert</button>
       </form>
-      {url && <p>{url}</p>}
+      {isAvailable && <Player url={url} />}
     </div>
   );
 };
