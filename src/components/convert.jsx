@@ -3,7 +3,6 @@ import { toast } from "react-toastify";
 import { convert } from "../services/convertService";
 import ListError from "./listError";
 import Joi from "joi";
-import Player from "./Player";
 
 const Convert = () => {
   const [text, setText] = useState("");
@@ -88,7 +87,11 @@ const Convert = () => {
         </div>
         <button className="btn btn-primary">Convert</button>
       </form>
-      {isAvailable && <Player url={url} />}
+      {isAvailable && (
+        <a href={url} target="_blank" className="auth-link">
+          Play audio
+        </a>
+      )}
     </div>
   );
 };

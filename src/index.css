@@ -11,8 +11,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: linear-gradient(135deg, #8bc6ec 0%, #9599e2 100%);
+  background-image: url("images/background.jpg");
   background-repeat: no-repeat;
+  height: 100%;
 }
 
 code {
@@ -35,21 +36,21 @@ code {
 
 .auth-link {
   text-decoration: none;
-  color: rgb(56, 90, 119);
+  color: #fff;
 }
 
-.btn-primary {
-  background-color: #3b5998;
+.value {
+  color: #fff;
+}
+
+.btn-primary,
+.btn-primary:hover {
+  background-color: #64a19d;
   border-width: 0px;
   width: 100%;
   color: #fff;
   margin-bottom: 15px;
   padding: 15px;
-}
-
-.btn-primary:hover {
-  background-color: #8b9dc3;
-  color: #fff;
 }
 
 @media only screen and (max-width: 768px) {
@@ -64,7 +65,7 @@ code {
 }
 
 .profile {
-  background-color: #ffffff;
+  background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0));
   padding: 20px 40px 40px 40px;
   border-radius: 10px;
   margin-top: 20px;
@@ -73,7 +74,7 @@ code {
 }
 
 .label {
-  color: #2b7ad7;
+  color: #64a19d;
   font-weight: bold;
   margin-bottom: 10px;
 }
@@ -82,10 +83,15 @@ code {
   width: 60%;
   margin: auto;
   padding: 40px;
+  background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0));
+}
+
+.modal {
+  background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0));
 }
 
 .ri-pencil-fill {
-  color: #2b7ad7;
+  color: #64a19d;
   cursor: pointer;
   float: right;
 }
